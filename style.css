@@ -1,0 +1,19 @@
+:root {
+  --font-family: monospace;
+  --text-align: right;
+  --margin: 10px;
+  --display: block;
+}
+
+input[name="success"] {
+  text-align: var(--text-align);
+}
+
+button[type="submit"] {
+  display: var(--display);
+  margin: var(--margin);
+}
+
+.output {
+  font-family: var(--font-family);
+}

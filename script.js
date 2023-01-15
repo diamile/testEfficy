@@ -28,6 +28,9 @@ const oppoStatus = [
 
 const FormComponent = class {
   constructor() {
+    /**
+     * ciblage des differents elements du dom
+     */
     this.select = document.querySelector("select[name='status']");
     this.input = document.querySelector("input[name='success']");
     this.form = document.querySelector("form");
@@ -45,6 +48,10 @@ const FormComponent = class {
       this.select.appendChild(option);
     });
 
+    /**
+     * ecouter un event au niveau du select afin de detecter les changements
+     * et recuperer les infos.
+     */
     this.select.addEventListener("change", (event) => {
       const selectedStatus = oppoStatus.find(
         (status) => status.K_OPPO_STATUS == event.target.value

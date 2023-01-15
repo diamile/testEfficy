@@ -44,6 +44,13 @@ const FormComponent = class {
       option.textContent = status.STATUS;
       this.select.appendChild(option);
     });
+
+    this.select.addEventListener("change", (event) => {
+      const selectedStatus = oppoStatus.find(
+        (status) => status.K_OPPO_STATUS == event.target.value
+      );
+      this.input.value = selectedStatus.SUCCESS;
+    });
   }
 };
 

@@ -34,7 +34,17 @@ const FormComponent = class {
     this.output = document.querySelector(".output");
     this.submit = document.querySelector("button[type='submit']");
   }
-  start() {}
+  start() {
+    /**
+     * Chargement des données au niveau de mon select
+     */
+    oppoStatus.forEach((status) => {
+      const option = document.createElement("option");
+      option.value = status.K_OPPO_STATUS;
+      option.textContent = status.STATUS;
+      this.select.appendChild(option);
+    });
+  }
 };
 
 const fc = new FormComponent();

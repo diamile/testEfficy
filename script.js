@@ -51,6 +51,16 @@ const FormComponent = class {
       );
       this.input.value = selectedStatus.SUCCESS;
     });
+
+    /**
+     * gestion de la soumission du formulaire
+     */
+    this.form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const StringifyData = JSON.stringify(Object.fromEntries(formData));
+      this.output.textContent = StringifyData;
+    });
   }
 };
 
